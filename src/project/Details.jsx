@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 export default function Details() {
-  const { id } = useParams(); // Prende l'ID dall'URL
+  const { id } = useParams();                                                                                 // Prende l'ID dall'URL
   const [project, setProject] = useState(portFolio);
   const [projectDetails, setProjectDetails] = useState(null);
 
