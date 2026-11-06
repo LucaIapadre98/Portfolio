@@ -1,57 +1,63 @@
-import { useState } from 'react';
 import portFolio from '../database/Database';
 import { Link } from 'react-router-dom';
 
 export default function Home() {
-  const [project, setProject] = useState(portFolio);
-
-  console.log('DB:', project);
-
   return (
     <>
-      <section className="hero">
+      <section className="home-hero">
         <div className="container">
-          <h1 className="display-4 fw-bold">Benvenuto nel mio Portfolio!</h1>
-          <p className="lead mt-3">
-            Qui puoi trovare i miei progetti e le mie competenze.
-          </p>
-          <a href="#progetti" className="btn btn-light btn-lg mt-3">
-            Scopri di più
-          </a>
+          <div className="hero-grid">
+            <div className="hero-copy">
+              <span className="eyebrow"><span className="eyebrow-dot" /> Portfolio personale</span>
+              <h1>Ciao, sono Luca.<br /><span>Sviluppatore web.</span></h1>
+              <p>
+                Mi appassiona trasformare idee in esperienze digitali semplici e intuitive.
+                Qui trovi alcuni dei progetti che ho realizzato e le tecnologie che uso
+                per dare forma al web.
+              </p>
+              <div className="hero-actions">
+                <a href="#progetti" className="button-primary">Esplora i progetti <span aria-hidden="true">↘</span></a>
+                <Link to="/contatti" className="button-outline">Parliamone <span aria-hidden="true">↗</span></Link>
+              </div>
+            </div>
+            <div className="hero-photo-wrap">
+              <img src="/fotoprofilo.jpg" alt="Luca Iapadre" className="hero-photo" />
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="container my-5" id="progetti">
-        <h2 className="text-center mb-4">I miei progetti</h2>
+      <section className="container section-wrap" id="progetti">
+        <div className="section-heading">
+          <div>
+            <span className="eyebrow"><span className="eyebrow-dot" /> Progetti selezionati</span>
+            <h2>I miei progetti</h2>
+          </div>
+          <p>Una raccolta di esperimenti e applicazioni realizzati con curiosità, attenzione ai dettagli e voglia di imparare.</p>
+        </div>
         <div className="row g-4">
-          {project.map((item) => (
-            <div key={item.id} className="col-lg-3 col-md-6 col-sm-12">
-              <div className="card h-100 shadow-sm">
+          {portFolio.map((item) => (
+            <div key={item.id} className="col-lg-3 col-md-6">
+              <article className="project-card">
                 <img
                   src={item.image}
-                  className="card-img-top"
+                  className="project-image"
                   alt={item.title}
-                  style={{
-                    height: '340px',
-                    objectFit: 'cover',
-                    objectPosition: 'center',
-                    padding: '3px',
-                  }}
                 />
-                <div className="card-body d-flex flex-column">
-                  <h4 className="card-title">{item.title}</h4>
-                  <p className="card-text flex-grow-1">
-                    In questo progetto troviamo l'utilizzo di:
-                    <strong>{item.strument}</strong>
+                <div className="project-body">
+                  <span className="project-index">0{item.id} / PROGETTO</span>
+                  <h3>{item.title}</h3>
+                  <p>
+                    Tecnologie: <strong>{item.strument}</strong>
                   </p>
                   <Link
                     to={`/details/${item.id}`}
-                    className="btn btn-primary mt-auto"
+                    className="text-link"
                   >
-                    Dettagli
+                    Scopri il progetto <span aria-hidden="true">→</span>
                   </Link>
                 </div>
-              </div>
+              </article>
             </div>
           ))}
         </div>

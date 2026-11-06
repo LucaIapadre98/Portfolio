@@ -9,10 +9,9 @@ import Details from './project/Details';
 export default function App() {
   return (
     <>
-      <div className="App">
+      <div className="d-flex flex-column min-vh-100">
         <Navbar />
-
-        <main>
+        <main className="flex-grow-1">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/strumenti" element={<Strumenti />} />
@@ -20,9 +19,8 @@ export default function App() {
             <Route path="/details/:id" element={<Details />} />
           </Routes>
         </main>
-
         <Footer />
-      </div>
+      </div>  
     </>
   );
 }

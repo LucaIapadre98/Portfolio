@@ -1,14 +1,10 @@
 export default function Footer() {
   return (
-    <footer
-      className="bg-dark text-light py-4 mt-5 text-center"
-      style={{ marginTop: 'auto' }}
-    >
+    <footer className="site-footer mt-auto">
       <div className="container">
-        <div className="footer-content">
-          <p className="mb-0">
-            &copy; 2025 MioSito - Tutti i diritti riservati
-          </p>
+        <div className="footer-inner">
+          <p><span className="footer-brand">Luca Iapadre</span> · © {new Date().getFullYear()} Tutti i diritti riservati</p>
+          <p>Progettato e sviluppato con cura.</p>
         </div>
       </div>
     </footer>
