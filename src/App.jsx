@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Strumenti from './pages/Strumenti';
 import Contatti from './pages/Contatti';
 import Details from './project/Details';
+import Esperienze from './pages/Esperienze';
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
             <Route path="/strumenti" element={<Strumenti />} />
             <Route path="/contatti" element={<Contatti />} />
             <Route path="/details/:id" element={<Details />} />
+            <Route path="/esperienze" element={<Esperienze />} />
           </Routes>
         </main>
         <Footer />

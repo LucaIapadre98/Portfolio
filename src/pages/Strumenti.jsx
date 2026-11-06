@@ -18,6 +18,7 @@ const skillGroups = [
       ['Node.js', '/node.png'],
       ['Express.js', '/express.png'],
       ['MySQL', '/mySQL.png'],
+      ['PostgreSQL', '/PostgreSQL.png'],
       ['REST API', '/restAPI.png'],
       ['Java', '/java-logo.png'],
     ],
